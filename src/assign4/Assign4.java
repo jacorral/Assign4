@@ -38,5 +38,26 @@ public class Assign4 {
     
         
     }
+    public static int randomNumbers(){
+        return 9;
+    }
+    
+    public static int add(int a, int b){
+        
+        return 10;
+    }
+    
+    public static int subtract(int a, int b){
+        return 11;
+    }
+    
+    public static int multipy(int a, int b){
+        
+        return 12;
+    }
+    public static double divide(int a, int b){
+        
+        return 13;
+    }
     
 }
