@@ -57,7 +57,7 @@ public class ArithmeticOperations {
                             int secondNumber = randomNumber();
                             
                             //add(firstNumber,secondNumber);
-                            System.out.println("How much is " + firstNumber + " + " +
+                            System.out.println("How much is " + firstNumber + " plus " +
                                     secondNumber + "?");
                             System.out.println("Enter your answer (-1 to return to menu)");
                             int answer = input.nextInt();
@@ -93,7 +93,7 @@ public class ArithmeticOperations {
                                 firstNumber = temp;
                             }
                             
-                            System.out.println("How much is " + firstNumber + " - "
+                            System.out.println("How much is " + firstNumber + " minus "
                                     + " " +
                                     secondNumber + "?");
                             System.out.println("Enter your answer (-1 to return to menu)");
@@ -124,7 +124,7 @@ public class ArithmeticOperations {
                             int secondNumber = randomNumber();
                             
                             //add(firstNumber,secondNumber);
-                            System.out.println("How much is " + firstNumber + " X " +
+                            System.out.println("How much is " + firstNumber + " times " +
                                     secondNumber + "?");
                             System.out.println("Enter your answer (-1 to return to menu)");
                             int answer = input.nextInt();
@@ -160,7 +160,7 @@ public class ArithmeticOperations {
                             }
                             
                             //add(firstNumber,secondNumber);
-                            System.out.println("How much is " + firstNumber + " / " +
+                            System.out.println("How much is " + firstNumber + " divided " +
                                     secondNumber + "?");
                             System.out.println("Enter your answer (-1 to return to menu)");
                             double answer = input.nextDouble();
