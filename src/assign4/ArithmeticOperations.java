@@ -29,7 +29,7 @@ public class ArithmeticOperations {
 
         while (selection != 5) {
             
-            //Printing menu
+            //Printing user menu
             printMenu();
             selection = input.nextInt();
 
@@ -48,7 +48,9 @@ public class ArithmeticOperations {
                 /*Using switch, case statements for selecting the arithmetic
                 operation to be performed.  A while loop is used per operation to 
                 keep asking what the answer is until the value of -1 is entered to exit the
-                loop.  The application can be extended to other operations by simply adding
+                loop.  Once a particular operation is exited, the application returns to the 
+                main menu where another operation can be chosen or the application can be exited.
+                The application can be extended to other operations by simply adding
                 additional case statements and implementing the method for the desired function                
                 */
                 switch(selection){
