@@ -6,7 +6,7 @@
 package assign4;
 
 /**
- *
+ * 
  * @author Jose Corral
  * 
  */
@@ -45,14 +45,15 @@ public class ArithmeticOperations {
                 int count = 0;
                 int correct = 0;
                 int wrong = 0;
-                /*Using switch, case statements for selecting the arithmetic
+                /** ************************************************************************
+                Using switch, case statements for selecting the arithmetic
                 operation to be performed.  A while loop is used per operation to 
                 keep asking what the answer is until the value of -1 is entered to exit the
                 loop.  Once a particular operation is exited, the application returns to the 
                 main menu where another operation can be chosen or the application can be exited.
                 The application can be extended to other operations by simply adding
                 additional case statements and implementing the method for the desired function                
-                */
+                ***************************************************************************/
                 switch(selection){
                     
                     case 1: //Implementing the addition portion
@@ -61,7 +62,6 @@ public class ArithmeticOperations {
                             int firstNumber = randomNumber();
                             int secondNumber = randomNumber();
                             
-                            //add(firstNumber,secondNumber);
                             System.out.println("How much is " + firstNumber + " plus " +
                                     secondNumber + "?");
                             System.out.println("Enter your answer (-1 to return to menu):");
@@ -91,7 +91,11 @@ public class ArithmeticOperations {
                             int firstNumber = randomNumber();
                             int secondNumber = randomNumber();
                             
-                            //add(firstNumber,secondNumber);
+                            /*  
+                            Making sure that that we never have a 
+                            negative answer by always making the first number
+                            bigger than the second number
+                            */
                             if (firstNumber < secondNumber){
                                 int temp = secondNumber;
                                 secondNumber = firstNumber;
@@ -128,7 +132,6 @@ public class ArithmeticOperations {
                             int firstNumber = randomNumber();
                             int secondNumber = randomNumber();
                             
-                            //add(firstNumber,secondNumber);
                             System.out.println("How much is " + firstNumber + " times " +
                                     secondNumber + "?");
                             System.out.println("Enter your answer (-1 to return to menu):");
@@ -159,12 +162,16 @@ public class ArithmeticOperations {
                             int firstNumber = randomNumber();
                             int secondNumber = randomNumber();
                             
-                            if (secondNumber == 0){
+                            /*
+                            If the divisor is zero than we need to break out
+                            to the main loop, since dividing by zero is an
+                            illegal operation 
+                            */
+                            if (secondNumber == 0){  
                                 System.out.println("Cannot divide by zero");
                                 break;
                             }
-                            
-                            //add(firstNumber,secondNumber);
+                           
                             System.out.println("How much is " + firstNumber + " divided " +
                                     secondNumber + "?");
                             System.out.println("Enter your answer, up to two decimal places" +
@@ -174,8 +181,10 @@ public class ArithmeticOperations {
                             if(answer == -1){
                                 break;
                             }
-                            // The accuracy of the division needs to be up to
-                            // two decimal places or 1/100
+                            /* 
+                            The accuracy of the division needs to be up to
+                            two decimal places or 1/100  
+                            */
                             else if(abs(answer - divide(firstNumber,secondNumber))< 0.01){
                                 System.out.println("Very Good!");
                                 correct++;
@@ -215,7 +224,7 @@ public class ArithmeticOperations {
     /**
      * 
      * Method that generates a random integer number between 0 and 99
-     * 
+     * @return integer 
      */
     public static int randomNumber() {
         int number = (int) (Math.random() * 100);
@@ -226,7 +235,9 @@ public class ArithmeticOperations {
     /**
      * 
      * Method that adds two integer numbers 
-     * 
+     * @param a integer 
+    * @param b integer
+    * @return integer
      */
     public static int add(int a, int b) {
         int sum = a + b;
@@ -236,6 +247,9 @@ public class ArithmeticOperations {
 
     /**
     * Method that subtracts two integer number
+    * @param a integer 
+    * @param b integer
+    * @return integer 
     */
     public static int subtract(int a, int b) {
         int subtract = a - b;
@@ -243,8 +257,10 @@ public class ArithmeticOperations {
     }
 
     /**
-    * Method that multiplies two integer numbers 
-    * 
+    *  Method that multiplies two integer numbers 
+    * @param a integer 
+    * @param b integer 
+    * @return integer 
     */
     public static int multiply(int a, int b) {
         int times = a * b;
@@ -254,6 +270,9 @@ public class ArithmeticOperations {
     /**
     * Method that divides two integer numbers and returns 
     * a double
+    * @param a integer 
+    * @param b integer 
+    * @return double 
     */
     public static double divide(int a, int b) {
         double div =  a /(1.0*b);
