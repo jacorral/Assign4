@@ -69,7 +69,7 @@ public class ArithmeticOperations {
                                 System.out.println("Very Good!");
                                 correct++;
                             }else{
-                                System.out.println("No.  Please try again");
+                                System.out.println("Wrong.  Please try again");
                                 wrong++;
                             }
                             count++;
@@ -81,6 +81,42 @@ public class ArithmeticOperations {
                     break;    
                         
                     case 2: System.out.println("2 Subtraction");
+                        
+                        while(select != -1){
+                            int firstNumber = randomNumber();
+                            int secondNumber = randomNumber();
+                            
+                            //add(firstNumber,secondNumber);
+                            if (firstNumber < secondNumber){
+                                int temp = secondNumber;
+                                secondNumber = firstNumber;
+                                firstNumber = temp;
+                            }
+                            
+                            System.out.println("How much is " + firstNumber + " - "
+                                    + " " +
+                                    secondNumber + "?");
+                            System.out.println("Enter your answer (-1 to return to menu)");
+                            int answer = input.nextInt();
+                            select = answer;
+                            if(answer == -1){
+                                break;
+                            }
+                            else if(answer == subtract(firstNumber,secondNumber)){
+                                System.out.println("Very Good!");
+                                correct++;
+                            }else{
+                                System.out.println("Wrong.  Please try again");
+                                wrong++;
+                            }
+                            count++;
+                        }
+                    System.out.println("Subtraction problems played: " + count);
+                    System.out.println("Number of correct answers: " + correct);
+                    System.out.println("Number of wrong answers: " + wrong);
+                    System.out.println();
+                    break;
+                        
                     case 3: System.out.println("3 Multiplication");
      
                         while(select != -1){
@@ -100,7 +136,7 @@ public class ArithmeticOperations {
                                 System.out.println("Very Good!");
                                 correct++;
                             }else{
-                                System.out.println("No.  Please try again");
+                                System.out.println("Wrong.  Please try again");
                                 wrong++;
                             }
                             count++;
@@ -113,6 +149,39 @@ public class ArithmeticOperations {
                         
                         
                     case 4: System.out.println("4 Division");
+                    
+                         while(select != -1){
+                            int firstNumber = randomNumber();
+                            int secondNumber = randomNumber();
+                            
+                            if (secondNumber == 0){
+                                System.out.println("Cannot divide by zero");
+                                break;
+                            }
+                            
+                            //add(firstNumber,secondNumber);
+                            System.out.println("How much is " + firstNumber + " / " +
+                                    secondNumber + "?");
+                            System.out.println("Enter your answer (-1 to return to menu)");
+                            double answer = input.nextDouble();
+                            select = (int)answer;
+                            if(answer == -1){
+                                break;
+                            }
+                            else if(answer == divide(firstNumber,secondNumber)){
+                                System.out.println("Very Good!");
+                                correct++;
+                            }else{
+                                System.out.println("Wrong.  Please try again");
+                                wrong++;
+                            }
+                            count++;
+                        }
+                    System.out.println("Division problems played: " + count);
+                    System.out.println("Number of correct answers: " + correct);
+                    System.out.println("Number of wrong answers: " + wrong);
+                    System.out.println();
+                    break;
                 }
                         
                // break;
@@ -153,7 +222,7 @@ public class ArithmeticOperations {
     }
 
     public static double divide(int a, int b) {
-        int div = (int) (a / b);
+        double div =  a /(1.0*b);
         return div;
     }
 
