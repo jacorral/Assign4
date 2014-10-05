@@ -1,20 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * This application tests for knowledge in basic arithmetic functions
+ * addition, subtraction, division and multiplication
  */
+
 package assign4;
 
 /**
  *
- * @author Jose Coral
+ * @author Jose Corral
+ * 
  */
+import static java.lang.StrictMath.abs;
 import java.util.Scanner;
 
 public class ArithmeticOperations {
 
     /**
-     * @param args the command line arguments
+     * @param args this application does not take any command line arguments
      *
      */
     public static void main(String[] args) {
@@ -31,17 +33,27 @@ public class ArithmeticOperations {
             printMenu();
             selection = input.nextInt();
 
+            //Doing a basic check for correct input from the user
+            //if selecting an invalid choice, an error message will be printed
             if ((selection > 5) || (selection <= 0)) {
                 System.out.println("Invalid number");
                 System.out.println("Select again!");
                
             } else {
+                //Initializing variables to be used on the rest of the app
                 int select = 0;
                 int count = 0;
                 int correct = 0;
                 int wrong = 0;
+                /*Using switch, case statements for selecting the arithmetic
+                operation to be performed.  A while loop is used per operation to 
+                keep asking what the answer is until the value of -1 is entered to exit the
+                loop.  The application can be extended to other operations by simply adding
+                additional case statements and implementing the method for the desired function                
+                */
                 switch(selection){
-                    case 1: 
+                    
+                    case 1: //Implementing the addition portion
                         
                         while(select != -1){
                             int firstNumber = randomNumber();
@@ -50,7 +62,7 @@ public class ArithmeticOperations {
                             //add(firstNumber,secondNumber);
                             System.out.println("How much is " + firstNumber + " plus " +
                                     secondNumber + "?");
-                            System.out.println("Enter your answer (-1 to return to menu)");
+                            System.out.println("Enter your answer (-1 to return to menu):");
                             int answer = input.nextInt();
                             select = answer;
                             if(answer == -1){
@@ -71,7 +83,7 @@ public class ArithmeticOperations {
                     System.out.println();
                     break;    
                         
-                    case 2: 
+                    case 2: //Implementing the subtraction portion
                         
                         while(select != -1){
                             int firstNumber = randomNumber();
@@ -87,7 +99,7 @@ public class ArithmeticOperations {
                             System.out.println("How much is " + firstNumber + " minus "
                                     + " " +
                                     secondNumber + "?");
-                            System.out.println("Enter your answer (-1 to return to menu)");
+                            System.out.println("Enter your answer (-1 to return to menu):");
                             int answer = input.nextInt();
                             select = answer;
                             if(answer == -1){
@@ -108,7 +120,7 @@ public class ArithmeticOperations {
                     System.out.println();
                     break;
                         
-                    case 3: 
+                    case 3: //Implementing the multiplication portion
      
                         while(select != -1){
                             int firstNumber = randomNumber();
@@ -117,7 +129,7 @@ public class ArithmeticOperations {
                             //add(firstNumber,secondNumber);
                             System.out.println("How much is " + firstNumber + " times " +
                                     secondNumber + "?");
-                            System.out.println("Enter your answer (-1 to return to menu)");
+                            System.out.println("Enter your answer (-1 to return to menu):");
                             int answer = input.nextInt();
                             select = answer;
                             if(answer == -1){
@@ -139,7 +151,7 @@ public class ArithmeticOperations {
                     break;
                         
                         
-                    case 4: 
+                    case 4: //Implementing the division portion
                     
                          while(select != -1){
                             int firstNumber = randomNumber();
@@ -153,13 +165,16 @@ public class ArithmeticOperations {
                             //add(firstNumber,secondNumber);
                             System.out.println("How much is " + firstNumber + " divided " +
                                     secondNumber + "?");
-                            System.out.println("Enter your answer (-1 to return to menu)");
+                            System.out.println("Enter your answer, up to two decimal places" +
+                                    "(example: 12.34 or enter -1 to return to menu):");
                             double answer = input.nextDouble();
                             select = (int)answer;
                             if(answer == -1){
                                 break;
                             }
-                            else if(answer == divide(firstNumber,secondNumber)){
+                            // The accuracy of the division needs to be up to
+                            // two decimal places or 1/100
+                            else if(abs(answer - divide(firstNumber,secondNumber))< 0.01){
                                 System.out.println("Very Good!");
                                 correct++;
                             }else{
@@ -235,7 +250,7 @@ public class ArithmeticOperations {
     }
 
     /**
-    * Method that divides to integer numbers and returns 
+    * Method that divides two integer numbers and returns 
     * a double
     */
     public static double divide(int a, int b) {
