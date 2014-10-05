@@ -79,6 +79,7 @@ public class ArithmeticOperations {
                             }
                             count++;
                         }
+                    System.out.println("\nSUMMARY:");
                     System.out.println("Addition problems played: " + count);
                     System.out.println("Number of correct answers: " + correct);
                     System.out.println("Number of wrong answers: " + wrong);
@@ -120,6 +121,7 @@ public class ArithmeticOperations {
                             }
                             count++;
                         }
+                    System.out.println("\nSUMMARY:");
                     System.out.println("Subtraction problems played: " + count);
                     System.out.println("Number of correct answers: " + correct);
                     System.out.println("Number of wrong answers: " + wrong);
@@ -149,6 +151,7 @@ public class ArithmeticOperations {
                             }
                             count++;
                         }
+                    System.out.println("\nSUMMARY:");
                     System.out.println("Multiplication problems played: " + count);
                     System.out.println("Number of correct answers: " + correct);
                     System.out.println("Number of wrong answers: " + wrong);
@@ -194,6 +197,7 @@ public class ArithmeticOperations {
                             }
                             count++;
                         }
+                    System.out.println("\nSUMMARY:");
                     System.out.println("Division problems played: " + count);
                     System.out.println("Number of correct answers: " + correct);
                     System.out.println("Number of wrong answers: " + wrong);
