@@ -19,38 +19,29 @@ public class ArithmeticOperations {
      */
     public static void main(String[] args) {
         //initialize vairables
-        int sum, subract, multiply, divide;
-        int selection;
 
-        // for repository for MacPro
-        // Create scanner object
+        int selection = 0;
         Scanner input = new Scanner(System.in);
 
-        System.out.println("******Welcome to the Arithmetic quiz********");
-
-       // printMenu();
-
-        selection = 0;
+       
 
         while (selection != 5) {
             
+            //Printing menu
             printMenu();
             selection = input.nextInt();
 
             if ((selection > 5) || (selection <= 0)) {
                 System.out.println("Invalid number");
                 System.out.println("Select again!");
-                selection = input.nextInt();
+               
             } else {
-                //int firstNumber = randomNumber();
-                //int secondNumber = randomNumber();
-                System.out.println("You choose " + selection);
                 int select = 0;
                 int count = 0;
                 int correct = 0;
                 int wrong = 0;
                 switch(selection){
-                    case 1: System.out.println("1 Addition");
+                    case 1: 
                         
                         while(select != -1){
                             int firstNumber = randomNumber();
@@ -80,7 +71,7 @@ public class ArithmeticOperations {
                     System.out.println();
                     break;    
                         
-                    case 2: System.out.println("2 Subtraction");
+                    case 2: 
                         
                         while(select != -1){
                             int firstNumber = randomNumber();
@@ -117,7 +108,7 @@ public class ArithmeticOperations {
                     System.out.println();
                     break;
                         
-                    case 3: System.out.println("3 Multiplication");
+                    case 3: 
      
                         while(select != -1){
                             int firstNumber = randomNumber();
@@ -148,7 +139,7 @@ public class ArithmeticOperations {
                     break;
                         
                         
-                    case 4: System.out.println("4 Division");
+                    case 4: 
                     
                          while(select != -1){
                             int firstNumber = randomNumber();
@@ -183,44 +174,70 @@ public class ArithmeticOperations {
                     System.out.println();
                     break;
                 }
-                        
-               // break;
             }
         }
-
     }
+    
 
+    /**
+     * Method to print the main Menu
+     */
     public static void printMenu() {
-        System.out.println("1 Enter 1 for Addition ");
-        System.out.println("2 Enter 2 for Subtraction");
-        System.out.println("3 Enter 3 for Multipllication");
-        System.out.println("4 Enter 4 for Division");
-        System.out.println("5 Enter 5 to Exit");
+        System.out.println("******Welcome to the Arithmetic quiz********");
+        System.out.println("\nMENU: \n");
+        System.out.println(" Enter 1 for Addition ");
+        System.out.println(" Enter 2 for Subtraction");
+        System.out.println(" Enter 3 for Multipllication");
+        System.out.println(" Enter 4 for Division");
+        System.out.println(" Enter 5 to Exit");
         System.out.println();
 
     }
 
+    
+    /**
+     * 
+     * Method that generates a random integer number between 0 and 99
+     * 
+     */
     public static int randomNumber() {
         int number = (int) (Math.random() * 100);
         return number;
     }
 
+    
+    /**
+     * 
+     * Method that adds two integer numbers 
+     * 
+     */
     public static int add(int a, int b) {
         int sum = a + b;
 
         return sum;
     }
 
+    /**
+    * Method that subtracts two integer number
+    */
     public static int subtract(int a, int b) {
         int subtract = a - b;
         return subtract;
     }
 
+    /**
+    * Method that multiplies two integer numbers 
+    * 
+    */
     public static int multiply(int a, int b) {
         int times = a * b;
         return times;
     }
 
+    /**
+    * Method that divides to integer numbers and returns 
+    * a double
+    */
     public static double divide(int a, int b) {
         double div =  a /(1.0*b);
         return div;
