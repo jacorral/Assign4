@@ -28,11 +28,14 @@ public class ArithmeticOperations {
 
         System.out.println("******Welcome to the Arithmetic quiz********");
 
-        printMenu();
+       // printMenu();
 
-        selection = input.nextInt();
+        selection = 0;
 
         while (selection != 5) {
+            
+            printMenu();
+            selection = input.nextInt();
 
             if ((selection > 5) || (selection <= 0)) {
                 System.out.println("Invalid number");
@@ -43,11 +46,11 @@ public class ArithmeticOperations {
                 //int secondNumber = randomNumber();
                 System.out.println("You choose " + selection);
                 int select = 0;
+                int count = 0;
+                int correct = 0;
+                int wrong = 0;
                 switch(selection){
                     case 1: System.out.println("1 Addition");
-                        int count = 0;
-                        int correct = 0;
-                        int wrong = 0;
                         
                         while(select != -1){
                             int firstNumber = randomNumber();
@@ -59,27 +62,60 @@ public class ArithmeticOperations {
                             System.out.println("Enter your answer (-1 to return to menu)");
                             int answer = input.nextInt();
                             select = answer;
-                            
-                            if(answer == add(firstNumber,secondNumber)){
+                            if(answer == -1){
+                                break;
+                            }
+                            else if(answer == add(firstNumber,secondNumber)){
                                 System.out.println("Very Good!");
                                 correct++;
                             }else{
                                 System.out.println("No.  Please try again");
                                 wrong++;
                             }
-                        
                             count++;
                         }
                     System.out.println("Addition problems played: " + count);
                     System.out.println("Number of correct answers: " + correct);
                     System.out.println("Number of wrong answers: " + wrong);
+                    System.out.println();
+                    break;    
                         
                     case 2: System.out.println("2 Subtraction");
                     case 3: System.out.println("3 Multiplication");
+     
+                        while(select != -1){
+                            int firstNumber = randomNumber();
+                            int secondNumber = randomNumber();
+                            
+                            //add(firstNumber,secondNumber);
+                            System.out.println("How much is " + firstNumber + " X " +
+                                    secondNumber + "?");
+                            System.out.println("Enter your answer (-1 to return to menu)");
+                            int answer = input.nextInt();
+                            select = answer;
+                            if(answer == -1){
+                                break;
+                            }
+                            else if(answer == multiply(firstNumber,secondNumber)){
+                                System.out.println("Very Good!");
+                                correct++;
+                            }else{
+                                System.out.println("No.  Please try again");
+                                wrong++;
+                            }
+                            count++;
+                        }
+                    System.out.println("Multiplication problems played: " + count);
+                    System.out.println("Number of correct answers: " + correct);
+                    System.out.println("Number of wrong answers: " + wrong);
+                    System.out.println();
+                    break;
+                        
+                        
                     case 4: System.out.println("4 Division");
                 }
                         
-                break;
+               // break;
             }
         }
 
@@ -111,7 +147,7 @@ public class ArithmeticOperations {
         return subtract;
     }
 
-    public static int multipy(int a, int b) {
+    public static int multiply(int a, int b) {
         int times = a * b;
         return times;
     }
